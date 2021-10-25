@@ -1,0 +1,112 @@
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<!-- npm install primeng --save-->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" /> -->
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+        
+              
+            <div class="col-md-5">
+              <div class="card-counter primary">
+                <i class="fa fa-code-fork"></i>
+                <span class="count-numbers">12</span>
+                <span class="count-name">Manage Users</span>
+              </div>
+            </div>
+        
+            <div class="col-md-5">
+              <div class="card-counter info">
+                <i class="fa fa-users"></i>
+                <span class="count-numbers">35</span>
+                <span class="count-name">New User Requests</span>
+              </div>
+            </div>
+        
+          </div>
+        
+          <!-- <div class="shadow-none p-3 mb-5 bg-light rounded sortData">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-daily-tab" data-toggle="tab" href="#nav-daily" role="tab" aria-controls="nav-daily" aria-selected="true">Daily</a>
+                <a class="nav-item nav-link " id="nav-weekly-tab" data-toggle="tab" href="#nav-weekly" role="tab" aria-controls="nav-weekly" aria-selected="false">Weekly</a>
+                <a class="nav-item nav-link " id="nav-monthly-tab" data-toggle="tab" href="#nav-monthly" role="tab" aria-controls="nav-monthly" aria-selected="false">Monthly</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-daily" role="tabpanel" aria-labelledby="nav-daily-tab">
+               <p-chart type="pie" width="388px" margin-left= "86px" height="324px" [data]="pieData"></p-chart>
+              </div>
+              <div class="tab-pane fade " id="nav-weekly" role="tabpanel" aria-labelledby="nav-weekly-tab">
+                <p-chart type="bar" [data]="dataSource"></p-chart>
+               
+              </div>
+              <div class="tab-pane fade" id="nav-monthly" role="tabpanel" aria-labelledby="nav-monthly-tab">
+                <p-chart type="bar" [data]="dataSource"></p-chart>
+              </div>
+        
+            </div>
+        
+            <div class="bill-tab">
+              <div class="col-md-5">
+                <button type="button" class="btn btn-primary btn-lg">Billing Requests</button>
+                
+        
+            </div>
+            
+          </div>
+          
+           </div> -->
+        
+        
+           
+           <!-- <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div> -->
+        
+           <div class="shadow-none p-3 mb-5 bg-light rounded sortData">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a [ngClass]="{'nav-item nav-link active' : addClassTo=='daily', 'nav nav-tabs nav-item nav-link' : defaultClass=='' }" id="nav-daily-tab" (click)="getTabName('daily')" data-toggle="tab" href="#nav-daily" role="tab" aria-controls="nav-daily" aria-selected="true">Daily</a>
+                <a [ngClass]="{'nav-item nav-link active' : addClassTo=='weekly', 'nav nav-tabs nav-item nav-link' : defaultClass=='' }" id="nav-weekly-tab" (click)="getTabName('weekly')" data-toggle="tab" href="#nav-weekly" role="tab" aria-controls="nav-weekly" aria-selected="false">Weekly</a>
+                <a [ngClass]="{'nav-item nav-link active' : addClassTo=='monthly', 'nav nav-tabs nav-item nav-link' : defaultClass=='' }" id="nav-monthly-tab" (click)="getTabName('monthly')" data-toggle="tab" href="#nav-monthly" role="tab" aria-controls="nav-monthly" aria-selected="false">Monthly</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div [ngClass]="{'nav-item nav-link active' : addClassTo=='daily' , 'tab-pane fade': addClassTo!='daily' }" id="nav-daily" role="tabpanel" aria-labelledby="nav-daily-tab">
+               <p-chart type="pie" width="388px" margin-left= "86px" height="324px" [data]="dailyData"></p-chart>
+              </div>
+        
+              <div [ngClass]="{'nav-item nav-link active' : addClassTo=='weekly' , 'tab-pane fade': addClassTo!='weekly' }" id="nav-weekly" role="tabpanel" aria-labelledby="nav-weekly-tab">
+                <p-chart type="bar" [data]="weeklyData"></p-chart>
+              </div>
+              
+              <div [ngClass]="{'nav-item nav-link active' : addClassTo=='monthly' , 'tab-pane fade': addClassTo!='monthly' }" id="nav-monthly" role="tabpanel" aria-labelledby="nav-monthly-tab">
+                <p-chart type="bar" [data]="monthlyData"></p-chart>
+              </div>
+        
+            </div>
+        
+            <div class="bill-tab">
+              <div class="col-md-5">
+                <button type="button" class="btn btn-primary btn-lg">Billing Requests</button>
+                
+        
+            </div>
+            
+          </div>
+          
+           </div>
+        
+        
+        </div> 
+        
+        
+        
+    </body>
+
+
+</html>
